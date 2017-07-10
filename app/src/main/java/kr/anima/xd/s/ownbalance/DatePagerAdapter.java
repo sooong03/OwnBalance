@@ -16,6 +16,7 @@ public class DatePagerAdapter extends PagerAdapter {
 
     Context context;
 
+    // // TODO: 7/10/2017 추가됨 
     RecyclerView view_weekly;
     ContentWeeklyAdapter weeklyAdapter;
     ListView view_eventList;
