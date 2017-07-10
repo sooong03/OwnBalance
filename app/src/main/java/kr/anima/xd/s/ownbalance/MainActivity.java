@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tabDateFragment=new TabDateFragment(getLayoutInflater());
-        tabIndexFragment=new TabIndexFragment(this);
+        tabDateFragment=new TabDateFragment(this);
+        tabIndexFragment=new TabIndexFragment();
         tabShareFragment=new TabShareFragment();
         tabSettingFragment=new TabSettingFragment();
 

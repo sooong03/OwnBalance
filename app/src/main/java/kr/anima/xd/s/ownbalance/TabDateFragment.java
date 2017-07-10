@@ -31,9 +31,9 @@ public class TabDateFragment extends Fragment {
     public TabDateFragment() {
     }
 
-    public TabDateFragment(LayoutInflater inflater) {
-        this.inflater=inflater;
-        adapter=new DatePagerAdapter(inflater);
+    public TabDateFragment(Context context) {
+        this.context=context;
+        adapter=new DatePagerAdapter(context);
     }
 
     @Override
