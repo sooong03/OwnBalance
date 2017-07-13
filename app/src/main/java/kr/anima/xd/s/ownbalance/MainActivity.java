@@ -4,6 +4,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
@@ -13,15 +16,24 @@ public class MainActivity extends AppCompatActivity {
     TabShareFragment tabShareFragment;
     TabSettingFragment tabSettingFragment;
 
+
+    HashMap<String, HashMap<String, PersonalWheel.Project>> lifeWheel=new HashMap<>();
+    String[] category={"Spirituality", "Finances", "Business",
+            "Health", "Environment", "Relationships",
+            "Education", "Appearance","Emotional"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setLifeWheel();
+
         tabDateFragment=new TabDateFragment(this);
-        tabIndexFragment=new TabIndexFragment();
-        tabShareFragment=new TabShareFragment();
-        tabSettingFragment=new TabSettingFragment();
+        tabIndexFragment=new TabIndexFragment(this);
+        tabShareFragment=new TabShareFragment(this);
+        tabSettingFragment=new TabSettingFragment(this);
 
         // 초기 화면 설정 필요
 
@@ -57,5 +69,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
-}
+    } // onCreate
+
+
+    void setLifeWheel(){
+        // set Category
+        for(String t : category){
+            lifeWheel.put(t, new HashMap<String, PersonalWheel.Project>());
+        }
+
+    } //set LifeWheel
+
+
+
+} // class Main

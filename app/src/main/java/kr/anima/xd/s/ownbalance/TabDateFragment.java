@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 public class TabDateFragment extends Fragment {
 
     Context context;
-    LayoutInflater inflater;
 
     ViewPager pager;
     FloatingActionButton fab;
@@ -41,8 +40,9 @@ public class TabDateFragment extends Fragment {
                              Bundle savedInstanceState) {
         View tabDateView=inflater.inflate(R.layout.fragment_tab_date, container, false);
 
-        pager= (ViewPager) tabDateView.findViewById(R.id.view_pager);
+
         fab= (FloatingActionButton) tabDateView.findViewById(R.id.fab);
+        pager= (ViewPager) tabDateView.findViewById(R.id.view_pager);
         pager.setAdapter(adapter);
 
         return tabDateView;

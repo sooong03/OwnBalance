@@ -16,10 +16,13 @@ import android.view.ViewGroup;
  */
 public class TabIndexFragment extends Fragment {
 
+    Context context;
+
     ViewPager pager;
     TabLayout tabLayout;
 
-    public TabIndexFragment() {
+    public TabIndexFragment(Context context) {
+        this.context=context;
     }
 
 
